@@ -13,7 +13,6 @@ var daysOfWeek = ["Sunday",
 
 //set display for default/last searched city forecast
 
-//build search bar as input text area in html. Look at activity 06-06 Movie JSON Dump and 06-07 Movie Button Layout
 
 //set display for current city weather. Include city name, date, icon of weather, temperature, humidity, wind speed, UV index
 
@@ -28,14 +27,28 @@ function displayWeather() {
     var userLocation = $(this).attr("data-name");
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q={city name},{state code}&appid={e318c6cc07b96c8c279bb20fa2877307}" ;
     
+    //show search history
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) {
         console.log(response);
+        var wrapper = $("<div class='wrapper'>");
+        var cityName = $("<h2>").text(response.Name);
     })
     
     console.log(userLocation);
+}
+
+function searchHistory() {
+    $("#buttons-view").empty();
+    for (var i = 0; i < lastSearched.length; i++) {
+        var a = $("<button>");
+        a.addClass("cityName");
+        a.attr("data-name",lastSearched[i]);
+        a.text(lastSearched[i]);
+        $("#buttons-view").append(a);
+    }
 }
 
 $("#add-city").on("click", function(event) {
@@ -44,7 +57,9 @@ $("#add-city").on("click", function(event) {
     console.log(userCity);
 
     lastSearched.push(userCity);
+
+    searchHistory();
 });
 
-//show search history
+$(document).on("click"), ".cityName"
 //use display:flex previously searched cities. They should be buttons, flex-direction: column-reverse (puts most recent at the top), justify-content: flex-start, CHECK ACTIVITY 06-10 WORKING MOVIE APP
