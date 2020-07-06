@@ -23,7 +23,7 @@ var daysOfWeek = ["Sunday",
 
 
 //search bar for looking up cities
-function displayWeather() {
+function displaySearchHistory() {
     var userLocation = $(this).attr("data-name");
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q={city name},{state code}&appid={e318c6cc07b96c8c279bb20fa2877307}" ;
     
@@ -41,15 +41,15 @@ function displayWeather() {
 }
 
 function searchHistory() {
-    $("#buttons-view").empty();
+    $("#history-view").empty();
     for (var i = 0; i < lastSearched.length; i++) {
-        var a = $("<button>");
-        a.addClass("cityName");
+        var a = $("<p class='cityName'>");
         a.attr("data-name",lastSearched[i]);
         a.text(lastSearched[i]);
-        $("#buttons-view").append(a);
+        $("#history-view").append(a);
     }
 }
+
 
 $("#add-city").on("click", function(event) {
     event.preventDefault();
@@ -59,7 +59,7 @@ $("#add-city").on("click", function(event) {
     lastSearched.push(userCity);
 
     searchHistory();
+    $("#user-input").val("");
 });
 
-$(document).on("click"), ".cityName"
-//use display:flex previously searched cities. They should be buttons, flex-direction: column-reverse (puts most recent at the top), justify-content: flex-start, CHECK ACTIVITY 06-10 WORKING MOVIE APP
+$(document).on("click", ".cityName", displaySearchHistory);
