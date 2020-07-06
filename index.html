@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
     <header>
         <h1 class="header">Weather Dashboard</h1>
@@ -14,6 +16,21 @@
     <div class="wrapper">
         <!-- Main site content goes here -->
     </div>
+    <div id="buttons-view"></div>
+
+    <form id="search-form">
+        <label for="user-input">Search for a city</label>
+        <input type="text" id="user-input"><br>
+
+        <!-- Button triggers new city to be added -->
+        <input id="add-city" type="submit" value="Submit">
+    </form>
+
+    <!-- Cities will get dumped Here -->
+    <div id="cities-view"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/script.js"></script>
 </body>
+
 </html>
