@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+}
+
+#history-view {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    margin-left: 15px;
+    width: 15%;
+    
+}
+
+.cityName {
+    background-color: aliceblue;
+    color: #58595B;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    margin-top: 1px;
+    padding:10px;
+    text-align: center;
+}
