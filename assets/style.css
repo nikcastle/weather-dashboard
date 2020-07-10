@@ -1,22 +1,100 @@
-.header {
-    display: flex;
+body {
+    margin: auto;
+    background-color: white;
+}
+.slide {
+    margin-bottom: 50px;
 }
 
+.allCards {
+    border: 3px solid slategray;
+    border-radius: 5px;
+    margin: 0 105px;
+    padding: 75px;
+}
 #history-view {
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-start;
-    margin-left: 15px;
+    margin-top: 30px;
     width: 15%;
     
 }
 
 .cityName {
-    background-color: aliceblue;
-    color: #58595B;
+    background-color: #55A6CA;
+    color: white;
+    cursor: pointer;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: large;
-    margin-top: 1px;
     padding:10px;
     text-align: center;
+    width: 260px;
+}
+
+.top {
+    margin-bottom: 100px;
+}
+
+#todayCard {
+    width: 200px;
+    background-color: #D4F2FF;
+    border-radius: 5px;
+    text-align: center;
+}
+.card-title {
+    margin-bottom: 20px;
+}
+
+.futTitle {
+    background-color: #55A6CA;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fiveDay {
+    display: flex;
+    height: 200px;
+    justify-content: space-between;
+
+}
+
+.card-text {
+    width: 200px;
+}
+
+.week{
+    background-color: #D4F2FF;
+}
+
+.favorable {
+    background-color: #92E089;
+    color: black;
+}
+
+.moderate {
+    background-color: #E6E484;
+    color: black;
+}
+
+.severe {
+    background-color: #F2A797;
+    color: black;
+}
+
+
+@media only screen and (max-width: 768 px) {
+    body{
+        margin: 0px;
+        width: auto;
+    }
+    #history-view,
+    .row,
+    .top,
+    .fiveDay {
+        margin-left: 0px;
+    }
+    
+
 }
